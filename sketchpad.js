@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
 
 	$("div.container").append("<table class='table'></table>");
@@ -28,6 +26,12 @@ $(document).ready(function() {
 
 	colors();
 
+	function black() {
+		$("td").on('mouseenter', function() {
+			$(this).css('background-color', 'black');
+		});
+	};
+
 	$("button.clear").on('click', function() {
 		$("td").css('background-color', 'white');
 		});
@@ -40,6 +44,16 @@ $(document).ready(function() {
 		} else {
 			alert("That is not an acceptable value!");
 		}	
+	});
+
+	$("input.color-button").on('click', function() {
+		$("td").css('background-color', 'white');
+		colors();
+	});
+
+	$("input.black-button").on('click', function() {
+		$("td").css('background-color', 'white');
+		black();
 	});
 
 });
