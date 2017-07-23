@@ -2,8 +2,6 @@
 
 $(document).ready(function() {
 
-	var lift = false;
-
 	$("div.container").append("<table class='table'></table>");
 
 	function createGrid(num) {
