@@ -40,10 +40,15 @@ $(document).ready(function() {
 		var gridSize = parseInt(prompt("Please enter what grid size you would like (default value is 16).", 16));
 		if (gridSize === parseInt(gridSize, 10)) {
 			createGrid(gridSize);	
-			colors();
+			if ($("input.color-button").prop("checked", true) && $("input.black-button").prop("checked", false)) {
+				colors();
+			} else if ($("input.black-button").prop("checked", true) && $("input.color-button").prop("checked", false)) {
+				black();
+			}
 		} else {
 			alert("That is not an acceptable value!");
 		}	
+
 	});
 
 	$("input.color-button").on('click', function() {
